@@ -11,6 +11,19 @@ function consultaCep() {
             $("#code").html(response.cep);
             $("#cidade").html(response.localidade);
             $("#uf").html(response.uf);
+            $(".cep").show();
+            $(".barra-progresso").hide();
         }
     })
 }
+
+function novaConsultaCep() {
+    $(".barra-progresso").show();
+    $(".cep").hide();
+    setTimeout(consultaCep, 2000);
+}
+
+$(function() {
+    $(".cep").hide();
+    $(".barra-progresso").hide();
+})
